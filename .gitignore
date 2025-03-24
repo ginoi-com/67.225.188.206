@@ -1,0 +1,9 @@
+# 2024-07-11 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+/_my
+# 2024-07-28 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+# "Improve Elasticsearch settings": https://github.com/27estore/192.241.193.5/issues/25
+/etc/elasticsearch/elasticsearch.keystore*
+# 2024-07-12 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+# "Improve MySQL settings for Magento": https://github.com/27estore/192.241.193.5/issues/8
+/etc/mysql/credentials.cnf
+/etc/mysql/debian.cnf
