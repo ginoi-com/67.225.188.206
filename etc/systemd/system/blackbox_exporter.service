@@ -1,0 +1,16 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=Blackbox_exporter
+Documentation=https://github.com/prometheus/blackbox_exporter
+After=network.target
+
+[Service]
+EnvironmentFile=/usr/local/lp/etc/exporters/blackbox_exporter
+User=systuser
+ExecStart=/usr/local/lp/opt/exporters/blackbox_exporter/blackbox_exporter $ARGS
+Restart=on-failure
+AmbientCapabilities=CAP_NET_RAW
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+[Unit]
+ConditionPathExists=!/etc/eximdisable
+Description=Exim is a Mail Transport Agent, which is the program that moves mail from one machine to another.
+Wants=clamd.service spamd.service mailman.service
+
+[Service]
+Type=forking
+EnvironmentFile=/etc/sysconfig/exim
+PIDFile=/var/spool/exim/exim-daemon.pid
+ExecStart=/usr/libexec/exim.daemon start
+ExecReload=/usr/libexec/exim.daemon reload
+
+[Install]
+WantedBy=multi-user.target

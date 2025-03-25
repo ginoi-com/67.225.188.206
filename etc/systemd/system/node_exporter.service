@@ -1,0 +1,15 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=Prometheus node_exporter
+Documentation=https://github.com/prometheus/node_exporter
+After=network.target
+
+[Service]
+EnvironmentFile=/usr/local/lp/etc/exporters/node_exporter
+User=systuser
+ExecStart=/usr/local/lp/opt/exporters/node_exporter/node_exporter $ARGS
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

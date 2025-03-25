@@ -1,0 +1,15 @@
+[Unit]
+Description=Apache SpamAssassin™ deferral daemon
+ConditionPathExists=!/etc/eximdisable
+ConditionPathExists=!/etc/spamdisable
+ConditionPathExists=!/var/cpanel/dnsonly
+ConditionPathExists=/etc/cpspamd.conf
+After=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/run/spamd.pid
+ExecStart=/usr/local/cpanel/scripts/restartsrv_spamd
+
+[Install]
+WantedBy=multi-user.target

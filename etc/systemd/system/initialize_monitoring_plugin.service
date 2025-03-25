@@ -1,0 +1,8 @@
+[Unit]
+Description=Reinitialize cPanel & WHM's 360 Monitoring application, accounting for license and feature status
+Wants=initialize_monitoring_plugin.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/cpanel/scripts/run_plugin_lifecycle --plugin cpanel-monitoring-plugin --method install
+StandardOutput=journal

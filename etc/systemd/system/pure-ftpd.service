@@ -1,0 +1,14 @@
+[Unit]
+Description=Pure-FTPd
+After=network.target
+Wants=pure-authd.service
+ConditionPathExists=!/etc/ftpddisable
+ConditionPathExists=!/var/cpanel/dnsonly
+
+[Service]
+Type=simple
+# need to be sure Daemonize is turned off
+ExecStart=/usr/sbin/pure-config.pl /etc/pure-ftpd.conf
+
+[Install]
+WantedBy=multi-user.target
