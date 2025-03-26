@@ -1,8 +1,6 @@
 [Unit]
 Description=tailwatchd
 After=cpanel.service queueprocd.service
-# this is used by a DNS only server and should not block on /var/cpanel/dnsonly #
-
 [Service]
 Type=notify
 NotifyAccess=main
@@ -11,6 +9,5 @@ ExecStart=/usr/local/cpanel/scripts/restartsrv_tailwatchd --no-verbose --systemd
 ExecStop=/usr/local/cpanel/scripts/restartsrv_tailwatchd --stop --systemd-service=tailwatchd
 KillMode=process
 TimeoutStopSec=10
-
 [Install]
 WantedBy=multi-user.target

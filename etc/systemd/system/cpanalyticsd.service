@@ -2,7 +2,6 @@
 Description=cPanel Analytics Daemon
 After=cpanel.service
 ConditionPathExists=/var/cpanel/feature_toggles/analytics
-
 [Service]
 Type=forking
 PIDFile=/var/cpanel/analytics/run/cpanalyticsd.pid
@@ -11,6 +10,5 @@ ExecStop=/usr/local/cpanel/scripts/restartsrv_cpanalyticsd --stop --notconfigure
 ExecReload=/usr/local/cpanel/scripts/restartsrv_cpanalyticsd --restart --notconfigured-ok --systemd-service=cpanalyticsd
 KillMode=process
 TimeoutStopSec=10
-
 [Install]
 WantedBy=multi-user.target

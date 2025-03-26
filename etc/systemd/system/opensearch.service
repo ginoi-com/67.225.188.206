@@ -1,14 +1,11 @@
 [Unit]
 Description=OpenSearch Service
 After=network.target
-
 [Service]
 User=ginoi2024
 Group=ginoi2024
 ExecStart=/usr/local/opensearch/bin/opensearch
 Restart=always
 LimitNOFILE=65535
-
 [Install]
 WantedBy=multi-user.target
-

@@ -1,15 +1,11 @@
-# -*- mode: conf -*-
-
 [Unit]
 Description=Prometheus Mysql exporter
 Documentation=https://github.com/prometheus/mysqld_exporter
 After=network.target
-
 [Service]
 EnvironmentFile=/usr/local/lp/etc/exporters/mysqld_exporter
 User=systuser
 ExecStart=/usr/local/lp/opt/exporters/mysqld_exporter/mysqld_exporter $ARGS
 Restart=on-failure
-
 [Install]
 WantedBy=multi-user.target

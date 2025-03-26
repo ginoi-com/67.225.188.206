@@ -1,6 +1,5 @@
 [Unit]
 Description=Acronis backup service plugin
-
 [Service]
 Type=forking
 WorkingDirectory=/usr/local/cpanel/base/3rdparty/acronisbackup
@@ -8,10 +7,8 @@ ExecStart=/usr/local/cpanel/base/3rdparty/acronisbackup/scripts/acronis-backup-s
 ExecReload=/usr/local/cpanel/base/3rdparty/acronisbackup/scripts/acronis-backup-srv.sh restart_service
 ExecStop=/usr/local/cpanel/base/3rdparty/acronisbackup/scripts/acronis-backup-srv.sh stop_service
 PIDFile=/usr/local/cpanel/base/3rdparty/acronisbackup/srv/acronis-backup-srv.pid
-
 StartLimitInterval=60
 StartLimitBurst=10
 SyslogIdentifier=acronis_backup_srv
-
 [Install]
 WantedBy=multi-user.target

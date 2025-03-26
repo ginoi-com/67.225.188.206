@@ -3,10 +3,8 @@ Description=Pure-Authd
 PartOf=pure-ftpd.service
 ConditionPathExists=!/etc/ftpddisable
 ConditionPathExists=!/var/cpanel/dnsonly
-
 [Service]
 Type=simple
 ExecStart=/usr/sbin/pure-authd -s /var/run/ftpd.sock -r /usr/local/cpanel/bin/pureauth
-
 [Install]
 WantedBy=multi-user.target

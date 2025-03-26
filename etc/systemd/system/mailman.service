@@ -2,11 +2,9 @@
 Description=mailman services
 ConditionPathExists=!/var/cpanel/dnsonly
 Requires=exim.service
-
 [Service]
 Type=forking
 PIDFile=/usr/local/cpanel/3rdparty/mailman/data/master-qrunner.pid
 ExecStart=/usr/local/cpanel/scripts/restartsrv_mailman --no-verbose --notconfigured-ok
-
 [Install]
 WantedBy=multi-user.target

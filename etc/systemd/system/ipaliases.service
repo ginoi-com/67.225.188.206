@@ -7,15 +7,11 @@ ConditionFileNotEmpty=/etc/ips
 ConditionPathExists=/var/cpanel/mainip
 ConditionFileIsExecutable=/sbin/ip
 ConditionFileIsExecutable=/usr/local/cpanel/whostmgr/bin/ipaliases
-
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-
 ExecStart=/usr/local/cpanel/whostmgr/bin/ipaliases start
 ExecStop=/usr/local/cpanel/whostmgr/bin/ipaliases stop
 ExecReload=/usr/local/cpanel/whostmgr/bin/ipaliases restart
-# cannot a custom action for list, need to use /usr/local/cpanel/whostmgr/bin/ipaliases list manually
-
 [Install]
 WantedBy=multi-user.target

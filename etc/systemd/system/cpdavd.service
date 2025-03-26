@@ -2,7 +2,6 @@
 Description=cPanel dav services
 After=cpanel.service
 ConditionPathExists=!/var/cpanel/dnsonly
-
 [Service]
 Type=notify
 NotifyAccess=main
@@ -11,6 +10,5 @@ ExecStart=/usr/local/cpanel/etc/init/startcpdavd --no-verbose --systemd-service=
 ExecStop=/usr/local/cpanel/etc/init/stopcpdavd --no-verbose --systemd-service=cpdavd
 KillMode=process
 TimeoutStopSec=10
-
 [Install]
 WantedBy=multi-user.target

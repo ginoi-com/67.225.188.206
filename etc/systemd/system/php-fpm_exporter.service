@@ -1,15 +1,11 @@
-# -*- mode: conf -*-
-
 [Unit]
 Description=PHP-FPM exporter
 Documentation=https://github.com/hipages/php-fpm_exporter
 After=network.target
-
 [Service]
 EnvironmentFile=/usr/local/lp/etc/exporters/php-fpm_exporter
 User=systuser
 ExecStart=/usr/local/lp/opt/exporters/php-fpm_exporter/php-fpm_exporter $ARGS
 Restart=on-failure
-
 [Install]
 WantedBy=multi-user.target

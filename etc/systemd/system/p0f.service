@@ -3,10 +3,8 @@ Description=p0f passive fingerprinter
 PartOf=cpanel.service
 After=network-online.target
 ConditionPathExists=!/etc/p0fdisable
-
 [Service]
 Type=forking
 ExecStart=/usr/local/cpanel/3rdparty/sbin/p0f -i any -u cpanelconnecttrack -d -s /var/cpanel/userhomes/cpanelconnecttrack/p0f.socket 'less 400 and not dst port 80 and not dst port 443 and tcp[13] & 8==0'
-
 [Install]
 WantedBy=multi-user.target

@@ -1,7 +1,6 @@
 [Unit]
 Description=Reinitialize cPanel & WHM's Social Media Manager application, accounting for license and feature status
 Wants=initialize_socialbee_plugin.timer
-
 [Service]
 Type=oneshot
 ExecStart=/usr/local/cpanel/scripts/run_plugin_lifecycle --plugin cpanel-socialbee-plugin --method install

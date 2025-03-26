@@ -3,13 +3,11 @@ Description=Dovecot Imap Server
 After=network.target
 ConditionFileNotEmpty=/etc/dovecot/dovecot.conf
 ConditionPathExists=!/etc/dovecotdisable
-
 [Service]
 Type=simple
 ExecStart=/usr/sbin/dovecot -F -c /etc/dovecot/dovecot.conf
 ExecReload=/usr/sbin/dovecot reload
 ExecStop=/usr/sbin/dovecot_cpshutdown
 LimitNOFILE=16364
-
 [Install]
 WantedBy=multi-user.target

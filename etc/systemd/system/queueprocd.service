@@ -1,6 +1,5 @@
 [Unit]
 Description=cPanel Queue services
-
 [Service]
 Type=notify
 NotifyAccess=main
@@ -9,6 +8,5 @@ ExecStart=/usr/local/cpanel/etc/init/startqueueprocd --no-verbose  --systemd-ser
 ExecStop=/usr/local/cpanel/etc/init/stopqueueprocd --no-verbose --systemd-service=queueprocd
 KillMode=process
 TimeoutStopSec=10
-
 [Install]
 WantedBy=multi-user.target

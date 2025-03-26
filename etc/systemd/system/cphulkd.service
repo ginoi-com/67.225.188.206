@@ -1,7 +1,6 @@
 [Unit]
 Description=cPanel brute force detector services
 After=cpanel.service
-
 [Service]
 Type=notify
 NotifyAccess=main
@@ -13,6 +12,5 @@ StandardOutput=null
 StandardError=null
 StandardOutput=null
 TimeoutStopSec=10
-
 [Install]
 WantedBy=multi-user.target

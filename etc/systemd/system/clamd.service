@@ -2,16 +2,12 @@
 Description=clamd antivirus daemon
 ConditionPathExists=!/etc/clamddisable
 After=network-online.target
-
 [Service]
 Type=simple
 TimeoutSec=300
 EnvironmentFile=/etc/sysconfig/exim
 ExecStart=/usr/local/cpanel/3rdparty/bin/clamd -F
-
-# monitor and restart service similar to tailwatchd
 Restart=always
 RestartSec=30
-
 [Install]
 WantedBy=multi-user.target
