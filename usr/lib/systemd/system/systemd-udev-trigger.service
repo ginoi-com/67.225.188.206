@@ -1,0 +1,13 @@
+[Unit]
+Description=udev Coldplug all Devices
+Documentation=man:udev(7) man:systemd-udevd.service(8)
+DefaultDependencies=no
+Wants=systemd-udevd.service
+After=systemd-udevd-kernel.socket systemd-udevd-control.socket
+Before=sysinit.target
+ConditionPathIsReadWrite=/sys
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/udevadm trigger --type=subsystems --action=add
+ExecStart=/usr/bin/udevadm trigger --type=devices --action=add

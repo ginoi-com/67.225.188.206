@@ -1,0 +1,14 @@
+[Unit]
+Description=RPC Bind
+Documentation=man:rpcbind(8)
+DefaultDependencies=no
+RequiresMountsFor=/run/rpcbind
+Requires=rpcbind.socket
+Wants=rpcbind.target systemd-tmpfiles-setup.service
+After=systemd-tmpfiles-setup.service
+[Service]
+Type=notify
+EnvironmentFile=/etc/sysconfig/rpcbind
+ExecStart=/usr/bin/rpcbind $RPCBIND_ARGS -w -f
+[Install]
+WantedBy=multi-user.target

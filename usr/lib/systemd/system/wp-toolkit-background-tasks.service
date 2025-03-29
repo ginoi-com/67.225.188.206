@@ -1,0 +1,12 @@
+[Unit]
+Description=Background tasks executor for WP Toolkit
+After=sw-engine.service
+[Service]
+Type=simple
+WorkingDirectory=/usr/local/cpanel/3rdparty/wp-toolkit
+User=wp-toolkit
+Group=wp-toolkit
+ExecStart=/usr/local/cpanel/3rdparty/wp-toolkit/bin/run-script background-tasks-executor.php
+Restart=always
+[Install]
+WantedBy=multi-user.target

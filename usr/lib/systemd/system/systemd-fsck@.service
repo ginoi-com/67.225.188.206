@@ -1,0 +1,12 @@
+[Unit]
+Description=File System Check on %f
+Documentation=man:systemd-fsck@.service(8)
+DefaultDependencies=no
+BindsTo=%i.device
+After=%i.device systemd-fsck-root.service local-fs-pre.target
+Before=systemd-quotacheck.service shutdown.target
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/lib/systemd/systemd-fsck %f
+TimeoutSec=0

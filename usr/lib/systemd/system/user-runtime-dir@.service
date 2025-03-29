@@ -1,0 +1,10 @@
+[Unit]
+Description=User runtime directory /run/user/%i
+After=systemd-user-sessions.service
+StopWhenUnneeded=yes
+[Service]
+ExecStart=/usr/lib/systemd/systemd-user-runtime-dir start %i
+ExecStop=/usr/lib/systemd/systemd-user-runtime-dir stop %i
+Type=oneshot
+RemainAfterExit=true
+Slice=user-%i.slice

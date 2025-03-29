@@ -1,0 +1,7 @@
+[Unit]
+Description=System Upgrade using DNF failed
+DefaultDependencies=no
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rm -fv /system-update
+ExecStart=/usr/bin/systemctl --no-block reboot

@@ -1,0 +1,8 @@
+[Unit]
+Description=system activity accounting tool
+Documentation=man:sa1(8)
+After=sysstat.service
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/lib64/sa/sa1 1 1

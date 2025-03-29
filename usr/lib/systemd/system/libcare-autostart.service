@@ -1,0 +1,10 @@
+[Unit]
+Description=LibCare auto update
+After=multi-user.target
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/kcarectl --has-flags libcare-enabled
+ExecStart=/usr/bin/kcarectl --userspace-auto-update
+RemainAfterExit=yes
+[Install]
+WantedBy=multi-user.target

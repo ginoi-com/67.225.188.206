@@ -1,0 +1,17 @@
+[Unit]
+Description=Apache web server managed by cPanel EasyApache
+ConditionPathExists=!/etc/httpddisable
+ConditionPathExists=!/etc/apachedisable
+ConditionPathExists=!/etc/httpdisable
+After=network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
+[Service]
+Type=forking
+ExecStart=/usr/local/cpanel/scripts/restartsrv_httpd --no-verbose
+ExecStop=/usr/local/cpanel/scripts/restartsrv_httpd stop --no-verbose
+ExecReload=/usr/local/cpanel/scripts/restartsrv_httpd --no-verbose
+PIDFile=/run/apache2/httpd.pid
+TimeoutStartSec=5m
+TimeoutStopSec=30s
+[Install]
+WantedBy=multi-user.target

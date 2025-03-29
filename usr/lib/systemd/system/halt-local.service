@@ -1,0 +1,12 @@
+[Unit]
+Description=/usr/sbin/halt.local Compatibility
+ConditionFileIsExecutable=/usr/sbin/halt.local
+DefaultDependencies=no
+After=shutdown.target
+Before=final.target
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/halt.local
+TimeoutSec=0
+StandardOutput=tty
+RemainAfterExit=yes

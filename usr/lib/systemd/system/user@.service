@@ -1,0 +1,15 @@
+[Unit]
+Description=User Manager for UID %i
+After=systemd-user-sessions.service
+After=user-runtime-dir@%i.service
+Requires=user-runtime-dir@%i.service
+[Service]
+User=%i
+PAMName=systemd-user
+Type=notify
+ExecStart=-/usr/lib/systemd/systemd --user
+Slice=user-%i.slice
+KillMode=mixed
+Delegate=pids memory
+TasksMax=infinity
+TimeoutStopSec=120s

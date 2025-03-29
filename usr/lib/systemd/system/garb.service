@@ -1,0 +1,14 @@
+[Unit]
+Description=Galera Arbitrator Daemon
+Documentation=man:garbd(8)
+Documentation=https://galeracluster.com/library/documentation/arbitrator.html
+After=network.target
+[Install]
+WantedBy=multi-user.target
+Alias=garbd.service
+[Service]
+User=nobody
+ExecStart=/usr/bin/garb-systemd start
+KillSignal=SIGINT
+TimeoutSec=2m
+PrivateTmp=false

@@ -1,0 +1,13 @@
+[Unit]
+Description=udev Wait for Complete Device Initialization
+Documentation=man:udev(7) man:systemd-udevd.service(8)
+DefaultDependencies=no
+Wants=systemd-udevd.service
+After=systemd-udev-trigger.service
+Before=sysinit.target
+ConditionPathIsReadWrite=/sys
+[Service]
+Type=oneshot
+TimeoutSec=180
+RemainAfterExit=yes
+ExecStart=/usr/bin/udevadm settle

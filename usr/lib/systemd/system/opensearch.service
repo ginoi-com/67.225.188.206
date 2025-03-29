@@ -1,0 +1,27 @@
+[Unit]
+Description=OpenSearch
+Documentation=https://opensearch.org/
+[Service]
+Type=notify
+RuntimeDirectory=opensearch
+PrivateTmp=true
+EnvironmentFile=-/etc/default/opensearch
+EnvironmentFile=-/etc/sysconfig/opensearch
+WorkingDirectory=/usr/share/opensearch
+User=opensearch
+Group=opensearch
+ExecStart=/usr/share/opensearch/bin/systemd-entrypoint -p ${PID_DIR}/opensearch.pid --quiet
+StandardOutput=journal
+StandardError=inherit
+LimitNOFILE=65535
+LimitNPROC=4096
+LimitAS=infinity
+LimitFSIZE=infinity
+TimeoutStopSec=0
+KillSignal=SIGTERM
+KillMode=process
+SendSIGKILL=no
+SuccessExitStatus=143
+TimeoutStartSec=75
+[Install]
+WantedBy=multi-user.target

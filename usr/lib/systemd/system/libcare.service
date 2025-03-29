@@ -1,0 +1,7 @@
+[Unit]
+Description=LibCare patch server
+[Service]
+ExecStartPre=/usr/bin/kcarectl --has-flags libcare-enabled
+ExecStart=/usr/libexec/kcare/libcare-server -v -o /var/log/libcare/server.log &3
+SuccessExitStatus=143
+ExecStop=/usr/libexec/kcare/libcare-client stop

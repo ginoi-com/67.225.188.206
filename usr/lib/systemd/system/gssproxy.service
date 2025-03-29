@@ -1,0 +1,12 @@
+[Unit]
+Description=GSSAPI Proxy Daemon
+After=syslog.target network.target
+Before=rpc-gssd.service
+[Service]
+Environment=KRB5RCACHEDIR=/var/lib/gssproxy/rcache
+ExecStart=/usr/sbin/gssproxy -D
+Type=forking
+PIDFile=/var/run/gssproxy.pid
+ExecReload=/bin/kill -HUP $MAINPID
+[Install]
+WantedBy=multi-user.target

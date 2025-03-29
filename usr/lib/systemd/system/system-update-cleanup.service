@@ -1,0 +1,13 @@
+[Unit]
+Description=Remove the Offline System Updates symlink
+Documentation=man:systemd.special(7) man:systemd.offline-updates(7)
+After=system-update.target
+DefaultDependencies=no
+Conflicts=shutdown.target
+Before=shutdown.target
+SuccessAction=reboot
+ConditionPathExists=|/system-update
+ConditionPathIsSymbolicLink=|/system-update
+[Service]
+Type=oneshot
+ExecStart=/bin/rm -fv /system-update

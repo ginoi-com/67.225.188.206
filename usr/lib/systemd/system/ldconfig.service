@@ -1,0 +1,13 @@
+[Unit]
+Description=Rebuild Dynamic Linker Cache
+Documentation=man:ldconfig(8)
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=local-fs.target
+Before=sysinit.target shutdown.target systemd-update-done.service
+ConditionNeedsUpdate=|/etc
+ConditionFileNotEmpty=|!/etc/ld.so.cache
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/sbin/ldconfig -X

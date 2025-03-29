@@ -1,0 +1,12 @@
+[Unit]
+Description=Loads kernelcare patches on startup
+After=multi-user.target
+[Service]
+Type=oneshot
+ExecStart=-/usr/bin/kcarectl --smart-update
+RemainAfterExit=yes
+ExecStop=-/bin/sh -c "date +'%%s' > /var/cache/kcare/stopped.at"
+ExecStop=-/bin/sh -c "rm -rf /var/cache/kcare/.kcareprev.lock"
+ExecStop=/usr/bin/kcarectl --unload
+[Install]
+WantedBy=multi-user.target

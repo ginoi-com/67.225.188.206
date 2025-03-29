@@ -1,0 +1,13 @@
+[Unit]
+Description=Startup script for Panel sw-engine
+After=network.target
+PartOf=psa.service
+[Service]
+Type=notify
+PIDFile=/run/sw-engine.pid
+ExecStart=/usr/sbin/sw-engine-fpm --fpm-config /etc/sw-engine/sw-engine-fpm.conf -c /usr/local/psa/admin/conf/php.ini --nodaemonize --pid /run/sw-engine.pid
+ExecReload=/bin/kill -s SIGUSR2 $MAINPID
+ExecStopPost=-/usr/bin/find /run/lock/lmlib/ -mindepth 1 -delete
+KillMode=process
+[Install]
+WantedBy=multi-user.target

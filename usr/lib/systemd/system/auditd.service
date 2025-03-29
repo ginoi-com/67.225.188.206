@@ -1,0 +1,23 @@
+[Unit]
+Description=Security Auditing Service
+DefaultDependencies=no
+After=local-fs.target systemd-tmpfiles-setup.service
+Before=sysinit.target shutdown.target
+Conflicts=shutdown.target
+RefuseManualStop=yes
+ConditionKernelCommandLine=!audit=0
+ConditionKernelCommandLine=!audit=off
+Documentation=man:auditd(8) https://github.com/linux-audit/audit-documentation
+[Service]
+Type=forking
+PIDFile=/run/auditd.pid
+ExecStart=/sbin/auditd
+ExecStartPost=-/sbin/augenrules --load
+Restart=on-failure
+RestartPreventExitStatus=2 4 6
+MemoryDenyWriteExecute=true
+LockPersonality=true
+ProtectKernelModules=true
+RestrictRealtime=true
+[Install]
+WantedBy=multi-user.target

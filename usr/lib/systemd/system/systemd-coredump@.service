@@ -1,0 +1,31 @@
+[Unit]
+Description=Process Core Dump
+Documentation=man:systemd-coredump(8)
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=systemd-remount-fs.service systemd-journald.socket
+Requires=systemd-journald.socket
+Before=shutdown.target
+[Service]
+ExecStart=-/usr/lib/systemd/systemd-coredump
+Nice=9
+OOMScoreAdjust=500
+RuntimeMaxSec=5min
+PrivateTmp=yes
+PrivateDevices=yes
+PrivateNetwork=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectControlGroups=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+MemoryDenyWriteExecute=yes
+RestrictRealtime=yes
+RestrictNamespaces=yes
+RestrictAddressFamilies=AF_UNIX
+RestrictSUIDSGID=yes
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+SystemCallArchitectures=native
+LockPersonality=yes
+StateDirectory=systemd/coredump

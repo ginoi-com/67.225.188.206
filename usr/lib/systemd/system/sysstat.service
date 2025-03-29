@@ -1,0 +1,11 @@
+[Unit]
+Description=Resets System Activity Logs
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=root
+ExecStart=/usr/lib64/sa/sa1 --boot
+[Install]
+WantedBy=multi-user.target
+Also=sysstat-collect.timer
+Also=sysstat-summary.timer

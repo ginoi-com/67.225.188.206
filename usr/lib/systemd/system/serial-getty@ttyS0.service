@@ -1,0 +1,21 @@
+[Unit]
+Description=Storm management console on Serial Getty %I
+Documentation=man:agetty(8) man:systemd-getty-generator(8)
+BindsTo=dev-%i.device
+After=dev-%i.device systemd-user-sessions.service plymouth-quit-wait.service
+After=rc-local.service
+Before=getty.target
+IgnoreOnIsolate=yes
+[Service]
+ExecStart=-/sbin/agetty -L -8 -i -n -l /bin/bash 115200 %I vt100
+StartLimitInterval=0
+Type=idle
+Restart=always
+RestartSec=0
+UtmpIdentifier=%I
+TTYPath=/dev/%I
+TTYReset=no
+TTYVHangup=no
+KillMode=process
+IgnoreSIGPIPE=no
+SendSIGHUP=yes
