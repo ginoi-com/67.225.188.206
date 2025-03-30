@@ -6,3 +6,5 @@ Server settings for `67.225.188.206` (`cloudvpstemplate.smh1lu-lwsites.com`) on 
 ## The server's software:
 - [AlmaLinux](https://en.wikipedia.org/wiki/AlmaLinux) 8.10 (binary compatible with RHEL / CentOS)
 - [systemd](https://en.wikipedia.org/wiki/Systemd)
+- PHP 8.3 FPM
+- MariaDB
