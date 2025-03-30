@@ -8,3 +8,4 @@ Server settings for `67.225.188.206` (`cloudvpstemplate.smh1lu-lwsites.com`) on 
 - [systemd](https://en.wikipedia.org/wiki/Systemd)
 - PHP 8.3 FPM
 - MariaDB 10.6.21
+- [OpenSearch](https://en.wikipedia.org/wiki/OpenSearch_(software))
