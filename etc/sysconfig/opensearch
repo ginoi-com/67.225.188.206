@@ -1,6 +1,6 @@
-OPENSEARCH_HOME=/usr/share/opensearch
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/share/opensearch/plugins/opensearch-knn/lib
+OPENSEARCH_HOME=/usr/share/opensearch
 OPENSEARCH_PATH_CONF=/etc/opensearch
-PID_DIR=/var/run/opensearch
-OPENSEARCH_STARTUP_SLEEP_TIME=5
 OPENSEARCH_SD_NOTIFY=true
+OPENSEARCH_STARTUP_SLEEP_TIME=5
+PID_DIR=/var/run/opensearch
