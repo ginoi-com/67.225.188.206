@@ -6,7 +6,6 @@ BindsTo=sssd.service
 BindsTo=sssd-pam.socket
 DefaultDependencies=no
 Conflicts=shutdown.target
-
 [Socket]
 ExecStartPre=/usr/libexec/sssd/sssd_check_socket_activated_responders -r pam
 Service=sssd-pam.service
@@ -14,6 +13,5 @@ ListenStream=/var/lib/sss/pipes/private/pam
 SocketUser=root
 SocketGroup=root
 SocketMode=0600
-
 [Install]
 WantedBy=sssd.service
