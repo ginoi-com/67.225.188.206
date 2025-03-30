@@ -1,0 +1,21 @@
+#!/bin/bash
+flock --exclusive \
+  --nonblock /var/run/insight.running \
+  --command /usr/local/lp/bin/insight-wordpress \
+  &>/dev/null
+flock --exclusive \
+  --nonblock /var/run/insight.running \
+  --command /usr/local/lp/bin/insight-magento \
+  &>/dev/null
+flock --exclusive \
+  --nonblock /var/run/insight.running \
+  --command /usr/local/lp/bin/insight-hidden \
+  &>/dev/null
+flock --exclusive \
+  --nonblock /var/run/insight.running \
+  --command /usr/local/lp/bin/insight-package \
+  &>/dev/null
+flock --exclusive \
+  --nonblock /var/run/insight.running \
+  --command '/usr/local/lp/bin/lshw -json | /usr/local/lp/bin/insight-generic --payloadType="lshw"' \
+  &>/dev/null

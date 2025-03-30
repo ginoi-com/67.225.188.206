@@ -1,0 +1,2 @@
+46 9 */2 * * root /usr/local/cpanel/3rdparty/bin/php -d disable_functions="" /usr/local/cpanel/whostmgr/docroot/cgi/softaculous/cron2.php >> /dev/null 2>&1
+

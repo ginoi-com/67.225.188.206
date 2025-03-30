@@ -1,0 +1,1 @@
+3 22 * * * root /usr/sbin/csf -u > /dev/null 2>&1

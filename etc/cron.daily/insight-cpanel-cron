@@ -1,0 +1,5 @@
+#!/bin/bash
+flock --exclusive \
+  --nonblock /var/run/insight.running \
+  --command /usr/local/lp/bin/insight-cpanel \
+  &>/dev/null

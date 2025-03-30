@@ -1,0 +1,2 @@
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+@reboot root /usr/local/lp/bin/lw-ef-cpanel --enable > /dev/null 2>&1

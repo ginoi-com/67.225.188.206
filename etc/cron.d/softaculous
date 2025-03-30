@@ -1,0 +1,3 @@
+38 7 * * * root /usr/local/cpanel/3rdparty/bin/php -d disable_functions="" /usr/local/cpanel/whostmgr/docroot/cgi/softaculous/cron.php >> /dev/null 2>&1
+*/5 * * * *  root /usr/local/cpanel/3rdparty/bin/php -d disable_functions="" /usr/local/cpanel/whostmgr/docroot/cgi/softaculous/do_backups.php >> /dev/null 2>&1
+
