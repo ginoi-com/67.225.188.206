@@ -1,0 +1,18 @@
+31 23 * * * (/usr/local/cpanel/scripts/fix-cpanel-perl; /usr/local/cpanel/scripts/upcp --cron > /dev/null)
+0 2 * * * /usr/local/cpanel/bin/backup
+35 * * * * /usr/bin/test -x /usr/local/cpanel/bin/tail-check && /usr/local/cpanel/bin/tail-check
+0 6 * * * /usr/local/cpanel/scripts/exim_tidydb > /dev/null 2>&1
+30 5 * * * /usr/local/cpanel/scripts/optimize_eximstats > /dev/null 2>&1
+5,20,35,50 * * * * /usr/local/cpanel/scripts/eximstats_spam_check 2>&1
+45 */4 * * * /usr/bin/test -x /usr/local/cpanel/scripts/update_mailman_cache && /usr/local/cpanel/scripts/update_mailman_cache
+15 */6 * * * /usr/local/cpanel/scripts/autorepair recoverymgmt >/dev/null 2>&1
+*/5 * * * * /usr/local/cpanel/scripts/dcpumon-wrapper >/dev/null 2>&1
+30 */4 * * * /usr/bin/test -x /usr/local/cpanel/scripts/update_db_cache && /usr/local/cpanel/scripts/update_db_cache
+25 */2 * * * /usr/local/cpanel/bin/mysqluserstore >/dev/null 2>&1
+15 */2 * * * /usr/local/cpanel/bin/dbindex >/dev/null 2>&1
+0 */2 * * * /usr/local/cpanel/scripts/shrink_modsec_ip_database -x 2>&1
+20 0 * * * /usr/local/cpanel/whostmgr/docroot/cgi/cpaddons_report.pl --notify
+13,28,43,58 * * * * /usr/local/cpanel/whostmgr/bin/dnsqueue > /dev/null 2>&1
+4 4 * * * /usr/local/cpanel/3rdparty/bin/freshclam --quiet --no-warnings
+09,39 * * * * /usr/local/cpanel/scripts/clean_user_php_sessions > /dev/null 2>&1
+4 * * * * /usr/local/cpanel/bin/process_team_queue > /dev/null 2>&1

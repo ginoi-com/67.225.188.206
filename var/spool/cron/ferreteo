@@ -1,0 +1,10 @@
+MAILTO=""
+SHELL="/bin/bash"
+2,15,30,56 * * * * /opt/cpanel/ea-php74/root/usr/bin/php /home/ferreteo/public_html/update/cron.php >> /home/ferreteo/public_html/var/log/update.cron.log
+
+SHELL="/bin/bash"
+5,16,33,59 * * * * /opt/cpanel/ea-php74/root/usr/bin/php /home/ferreteo/public_html/bin/magento setup:cron:run >> /home/ferreteo/public_html/var/log/setup.cron.log
+
+SHELL="/bin/bash"
+2,22,35,46 * * * * /opt/cpanel/ea-php74/root/usr/bin/php /home/ferreteo/public_html/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /home/ferreteo/public_html/var/log/magento.cron.log
+

@@ -1,0 +1,5 @@
+MAILTO=""
+SHELL="/bin/bash"
+* * * * * /opt/cpanel/ea-php83/root/usr/bin/php /home/ginoi2024/public_html/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /home/ginoi2024/public_html/var/log/magento.cron.log
+5,29,39,53 * * * * php /home/ginoi2024/public_html/stage/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /home/ginoi2024/public_html/stage/var/log/magento.cron.log
+

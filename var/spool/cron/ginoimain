@@ -1,0 +1,4 @@
+MAILTO=""
+SHELL="/bin/bash"
+13,17,38,52 * * * * /opt/cpanel/ea-php81/root/usr/bin/php /home/ginoimain/public_html/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /home/ginoimain/public_html/var/log/magento.cron.log
+36 9 * * * /usr/local/cpanel/3rdparty/bin/php -d disable_functions="" "/usr/local/cpanel/whostmgr/docroot/cgi/softaculous"/cli.php --backup --auto=1 --insid=665_24121
