@@ -1,0 +1,4 @@
+CUSTOM_BILLING:
+  upgrade_url: ../../../scripts14/purchase_imunifyavplus_init_IMUNIFY
+  billing_notifications: false
+  ip_license: true

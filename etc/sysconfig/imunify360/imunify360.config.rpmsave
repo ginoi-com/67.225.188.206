@@ -1,0 +1,8 @@
+MALWARE_SCAN_SCHEDULE:
+  day_of_month: 2
+  hour: 3
+  interval: month
+MOD_SEC_BLOCK_BY_CUSTOM_RULE:
+  33339:
+    check_period: 120
+    max_incidents: 10

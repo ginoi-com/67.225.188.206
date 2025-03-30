@@ -1,0 +1,6 @@
+LISTENER_PID_FILE=/var/spool/exim/exim-daemon.pid
+OUTGOING_PID_FILE=/var/spool/exim/exim-outgoing.pid
+LANG=C
+QUEUE=60m
+TMPDIR=/tmp
+DAEMON=yes

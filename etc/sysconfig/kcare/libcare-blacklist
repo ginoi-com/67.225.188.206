@@ -1,0 +1,56 @@
+# !!! Don't change this file !!!
+# Put user-defined patterns in /etc/sysconfig/kcare/libcare-blacklist.d/
+
+# Symantec
+path:/opt/Symantec/*
+filename:symcfgd
+filename:rtvscand
+filename:smcd
+# McAfee
+path:/opt/McAfee/*
+filename:masvc
+filename:macmnsvc
+filename:macompatsvc
+# CylancePROTECT
+path:/opt/cylance/*
+filename:cylancesvc
+# LinuxShield
+path:/opt/NAI/*
+filename:nailsd
+filename:nailslogd
+filename:logepo
+filename:mon
+filename:scanner
+# Trend Micro Deep Security Agent
+path:/opt/ds_agent/*
+filename:ds_agent
+# OSSEC
+path:/var/ossec/*
+filename:ossec-syscheckd
+# File Access Policy Daemon
+path:/usr/sbin/fapolicyd
+# BitDefender
+path:/opt/bitdefender-security-tools/*
+filename:epagngd
+filename:bdsecd
+filename:updated
+filename:bdsecd
+path:/opt/BitDefender/*
+filename:bdregd
+filename:bdlogd
+filename:epagd
+filename:bdepsecd
+filename:bdmond
+filename:bdupdated
+filename:bdsrvscand.bin
+# CrowdStrike
+path:/opt/CrowdStrike/*
+filename:falcond*
+filename:falconctl*
+filename:falconstore*
+filename:falcon-*
+# Microsoft Defender
+path:/opt/microsoft/mdatp/*
+filename:mdatp
+filename:mdatp_*
+filename:wdavdaemon
