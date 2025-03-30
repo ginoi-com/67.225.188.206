@@ -1,0 +1,8 @@
+[Unit]
+Description=Daily Cleanup of User's Temporary Directories
+Documentation=man:tmpfiles.d(5) man:systemd-tmpfiles(8)
+[Timer]
+OnStartupSec=5min
+OnUnitActiveSec=1d
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,7 @@
+[Unit]
+Description=Session services which should run early before the graphical session is brought up
+Documentation=man:systemd.special(7)
+Requires=basic.target
+Before=graphical-session.target
+RefuseManualStart=yes
+StopWhenUnneeded=yes
