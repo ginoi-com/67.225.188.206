@@ -1,5 +1,1 @@
-
-#~ MAGENTO START 88bf09538712c0bc0d1b410432ab6b89f2f9a31ea25aea31d6f13fa149fbe441
 * * * * * /opt/cpanel/ea-php82/root/usr/bin/php /home/ginoipro/public_html/bin/magento cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /home/ginoipro/public_html/var/log/magento.cron.log
-#~ MAGENTO END 88bf09538712c0bc0d1b410432ab6b89f2f9a31ea25aea31d6f13fa149fbe441
-
