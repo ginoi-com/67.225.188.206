@@ -1,0 +1,31 @@
+KeepAlive On
+KeepAliveTimeout 5
+MaxKeepAliveRequests 200
+Timeout 60
+
+<IfModule prefork.c>
+    StartServers 20
+    ServerLimit 125
+    MaxClients 125
+    MinSpareServers 20
+    MaxSpareServers 40
+    MaxRequestsPerChild 10000
+</IfModule>
+<IfModule worker.c>
+    StartServers 3
+    ServerLimit 5
+    ThreadsPerChild 25
+    MaxClients 125
+    MinSpareThreads 25
+    MaxSpareThreads 125
+    MaxRequestsPerChild 10000
+</IfModule>
+<IfModule event.c>
+    StartServers 4
+    ServerLimit 8
+    ThreadsPerChild 25
+    MaxRequestWorkers 200
+    MinSpareThreads 25
+    MaxSpareThreads 100
+    MaxRequestsPerChild 10000
+</IfModule>

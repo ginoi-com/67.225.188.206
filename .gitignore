@@ -1,3 +1,6 @@
 # 2025-03-25 Dmitrii Fediuk https://upwork.com/fl/mage2pro
 /_my
+# 2025-05-21
+/etc/apache2/conf.d/ssl.key/server.key
+# 2025-03-25
 /home/ginoi2024/.config/composer/auth.json
